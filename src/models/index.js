@@ -7,6 +7,7 @@ import { CartItem } from "./cartitem.js";
 import { Order } from "./order.js";
 import { Orderitem } from "./orderitem.js";
 
+
 // User Relaationshps
 User.hasOne(Cart, { foreignKey: "userId", as: "cart" });
 Cart.belongsTo(User, { foreignKey: "userId", as: "user" });
