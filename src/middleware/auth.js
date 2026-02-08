@@ -10,17 +10,17 @@ export const auth = async (req, res, next) => {
             return res.status(401).json({error: "Unauthorized, no authHeader"});
     }
     
-    const token = authHeader.split(' ')[1];
+     const token = authHeader.split(' ')[1];
 
     if(!token){
         return res.status(401).json({error: "Unauthorized, no token provided"})
     }
-    jwt.verify(token, config.access, (error, user) => {
+    jwt.verify(token, config.access, (error, decoded) => {
         if (error) {
             return res.status(403).json({error: "This session has expired. Kindly re-login"});
         }
         
-        req.user = user;
+        req.user = decoded;
         next();
     });
         

@@ -1,5 +1,6 @@
 import { Model, DataTypes } from "sequelize";
-import sequelize from "../config/sequelize.js";
+import { sequelize } from "../config/sequelize.js";
+
 
 export class Order extends Model {}
 
@@ -42,6 +43,10 @@ Order.init(
           "paid"
         ),
         defaultValue: "pending"
+      },
+      orderAddress: {
+        type: DataTypes.STRING,
+        allowNull: false
       }
   },
   {

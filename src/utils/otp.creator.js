@@ -14,9 +14,8 @@ export const generateOTPnumber = async (length = 6) => {
     const otpStr = OTP.toString();
 
     // Check if OTP already exists for any user
-    const result = await User.findOne({ where: { OTP: otpStr } });
-     exists = !!result; // true if number exists
+   // const result = await User.findOne({ where: { OTP: otpStr } });
+     exists = false; // true if number exists
   }
-
   return OTP;
 }

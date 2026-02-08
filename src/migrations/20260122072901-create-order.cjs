@@ -37,12 +37,24 @@ module.exports = {
         ),
         defaultValue:"pending"
       },
+      discount: {
+        type: Sequelize.DECIMAL,
+        allowNull: true,
+        defaultValue: 0.00
+      },
       paymentStatus:{
         type: Sequelize.ENUM( 
           "pending",
           "paid"
         ),
         defaultValue: "pending"
+      },
+      orderAddress: {
+        type: Sequelize.STRING,
+        allowNull: false,
+        onDelete: "CASCADE",
+        defaultValue: "Null"
+
       },
       createdAt: {
         allowNull: false,

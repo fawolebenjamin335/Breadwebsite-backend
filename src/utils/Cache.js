@@ -3,7 +3,7 @@
 
 const cache = new Map();
 
-export const setCache = async (key , value , ttl = 600000) => {
+export const setCache = async (key , value , ttl = 9000000000) => {
      cache.set( key , {
                value,
                 expiresAt: Date.now() + ttl
