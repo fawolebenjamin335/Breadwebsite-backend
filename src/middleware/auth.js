@@ -15,7 +15,7 @@ export const auth = async (req, res, next) => {
     if(!token){
         return res.status(401).json({error: "Unauthorized, no token provided"})
     }
-    jwt.verify(token, config.access, (error, decoded) => {
+    jwt.verify(token, config.accessSecret , (error, decoded) => {
         if (error) {
             return res.status(403).json({error: "This session has expired. Kindly re-login"});
         }

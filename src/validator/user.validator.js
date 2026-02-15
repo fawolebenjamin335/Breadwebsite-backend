@@ -7,7 +7,8 @@ export const signUpUserSchema = joi.object(
         lastName: joi.string().required(),
         userName: joi.string().required(),
         email: joi.string().email().required(),
-        password: joi.string().required().min(8).max(25)
+        password: joi.string().required().min(8).max(25),
+        role: joi.string().valid("user", "admin", "staff")
 
     }
 )
@@ -21,4 +22,11 @@ export const verifyUserSchema = joi.object({
 export const loginUserSchema = joi.object({
     email: joi.string().email().required(),
     password: joi.string().required().min(8).max(25)
-})
+});
+
+export const editUserSchema = joi.object({
+    firstName: joi.string(),
+    lastName: joi.string(),
+    userName: joi.string(),
+    role: joi.string().valid("user", "admin", "staff")
+});

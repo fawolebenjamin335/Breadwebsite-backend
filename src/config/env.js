@@ -2,6 +2,10 @@ import dotenv from "dotenv";
 
 dotenv.config();
 
+
+
+//export default cloudinary
+
 export const config = {
     port:process.env.PORT,
     users:process.env.EMAIL,

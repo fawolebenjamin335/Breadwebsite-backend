@@ -42,6 +42,12 @@ Product.init(
         type: DataTypes.BOOLEAN,
         defaultValue: true,
         allowNull: false
+      },
+      Quantity: {
+      type: DataTypes.INTEGER,
+      allowNull: false,
+      onDelete: "CASCADE",
+      onUpdate: "CASCADE"
       }
   },
   {
