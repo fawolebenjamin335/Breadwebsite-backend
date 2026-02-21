@@ -16,6 +16,10 @@ export const AddproductSchema = joi.object({
 export const updateProductSchema = joi.object({
 
     Description: joi.string(),
-    
-
+    Price: joi.number(),
+    Quantity: joi.number(),
+    inStock: joi.boolean(),
+    isActive: joi.boolean(),
+    Name: joi.string(),
+    ImgUrl: joi.string(),
 })

@@ -23,7 +23,7 @@ Product.init(
         type: DataTypes.FLOAT,
         allowNull: false
 
-      },
+      },      
       ImgUrl: {
         type: DataTypes.STRING,
         allowNull: false
@@ -48,7 +48,14 @@ Product.init(
       allowNull: false,
       onDelete: "CASCADE",
       onUpdate: "CASCADE"
+      },
+      publicID: {
+        type: DataTypes.STRING,
+      allowNull: true,
+      onDelete: "CASCADE",
+      onUpdate: "CASCADE"
       }
+
   },
   {
     sequelize,

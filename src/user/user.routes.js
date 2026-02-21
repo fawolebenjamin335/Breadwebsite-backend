@@ -7,8 +7,8 @@ import { auth } from "../middleware/auth.js";
 export const userRouters = Router();
 
 
-userRouters.get("/refresh", usercontrollers.refresh);
-userRouters.post("/logout", usercontrollers.logout);
+userRouters.get("/refresh", auth,usercontrollers.refresh);
+userRouters.post("/logout", auth, usercontrollers.logout);
 
 
 userRouters.post('/signup', usercontrollers.SignupUserController );
