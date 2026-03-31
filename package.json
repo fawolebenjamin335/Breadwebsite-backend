@@ -13,7 +13,7 @@
     "MS": "npx sequelize-cli migration:generate --name"
   },
   "keywords": [],
-  "author": "Fawole Benjamin",
+  "author": "",
   "license": "ISC",
   "type": "module",
   "devDependencies": {

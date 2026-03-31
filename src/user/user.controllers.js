@@ -65,6 +65,7 @@ export const SignupUserController = async ( req, res ) => {
 
 }
 
+
 export const VerifyUserController = async ( req, res) => {
     try {
         const { error, value} = verifyUserSchema.validate(req.body);
@@ -110,6 +111,7 @@ export const VerifyUserController = async ( req, res) => {
         return res.status(500).json({error: `Internal Server Error`});
     }
 }
+
 
 
 export const LoginUserController = async ( req, res) => {

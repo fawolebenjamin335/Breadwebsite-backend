@@ -1,29 +1,30 @@
 import { DataTypes, Model } from "sequelize";
 import { sequelize } from "../config/sequelize.js";
 
-export class Cart extends Model {}
+export class Cart extends Model { }
 
-Cart.init(
+Cart.init(  
   {
     id: {
-        allowNull: false,
-        autoIncrement: false,
-        primaryKey: true,
-        type: DataTypes.STRING,
-        defaultValue: DataTypes.UUIDV4
+      allowNull: false,
+      autoIncrement: false,
+      primaryKey: true,
+      type: DataTypes.STRING,
+      defaultValue: DataTypes.UUIDV4
+    },
+    userId: {
+      type: DataTypes.STRING,
+      allowNull: false,
+      references: {
+        model: 'User',
+        key: 'id'
       },
-      userId: {
-        type: DataTypes.STRING,
-        allowNull: false,
-        references: {
-          model: 'User',
-          key: 'id'
-        },
-        onUpdate: 'CASCADE',
-        onDelete: 'CASCADE'
-      },
+      onUpdate: 'CASCADE',
+      onDelete: 'CASCADE'
+    },
   },
-  { sequelize,
+  {
+    sequelize,
     modelName: "Cart"
   }
 

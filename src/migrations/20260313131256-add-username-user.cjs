@@ -3,12 +3,13 @@
 /** @type {import('sequelize-cli').Migration} */
 module.exports = {
   async up (queryInterface, Sequelize) {
-    await queryInterface.addColumn("Orders", "discount", {
-      type: Sequelize.DECIMAL,
-      allowNull: true,
-      defaultValue: 0.00
-    }
-    )
+    await queryInterface.addColumn("Users", "userName", {
+      type: Sequelize.STRING,
+      allowNull: false,
+      onDelete: "CASCADE",
+      onUpdate: "CASCADE"
+
+    })
     /**
      * Add altering commands here.
      *
@@ -18,7 +19,7 @@ module.exports = {
   },
 
   async down (queryInterface, Sequelize) {
-    await queryInterface.removeColumn("Orders", "discount");
+    await queryInterface.removeColumn("Users", "userName")
     /**
      * Add reverting commands here.
      *

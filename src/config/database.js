@@ -1,6 +1,6 @@
-import dotenv from 'dotenv';
+
 import { config } from './env.js';
-dotenv.config();
+
 
 export default {
     development: {
@@ -11,6 +11,8 @@ export default {
         port: config.db.port,
         dialect: "postgres",
     },
+
+    
     // test: {
     //     username: config.db.user,
     //     password: config.db.pass,

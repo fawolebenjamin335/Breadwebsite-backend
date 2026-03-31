@@ -50,8 +50,8 @@ Product.init(
       onUpdate: "CASCADE"
       },
       publicID: {
-        type: DataTypes.STRING,
-      allowNull: true,
+      type: DataTypes.STRING,
+      allowNull: false,
       onDelete: "CASCADE",
       onUpdate: "CASCADE"
       }

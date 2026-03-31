@@ -19,3 +19,22 @@ export const generateOTPnumber = async (length = 6) => {
   }
   return OTP;
 }
+
+export const generateSSN = async (length = 6) => {
+  const min = Math.pow(10, length - 1);
+  const max = Math.pow(10, length) - 1;
+
+  let SSN;
+  let exists = true;
+
+  while (exists) {
+    SSN = Math.floor(Math.random() * (max - min + 1)) + min;
+    const SSNtostring = SSN.toString();
+
+    // Check if SSN already exists for any user
+    const result = await User.findOne({ where: { SSN: SSNtostring } });
+     exists = false; 
+     SSN.toString()// true if number exists
+  }
+  return SSN;
+}

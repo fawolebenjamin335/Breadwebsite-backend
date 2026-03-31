@@ -1,10 +1,10 @@
-import dotenv from "dotenv";
+import dotenv from "dotenv"
+
 
 dotenv.config();
 
 
 
-//export default cloudinary
 
 export const config = {
     port:process.env.PORT,
@@ -12,6 +12,7 @@ export const config = {
     pass: process.env.EMAIL_PASSWORD,
     accessSecret: process.env.ACCESS_SECRET,
     refreshSecret: process.env.REFRESH_SECRET,
+   
 
     db: {
         database: process.env.DATABASE,
@@ -22,4 +23,4 @@ export const config = {
 
     }
 
-}
+};

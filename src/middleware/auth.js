@@ -8,7 +8,7 @@ export const auth = async (req, res, next) => {
 
         if(!authHeader) {
             return res.status(401).json({error: "Unauthorized, no authHeader"});
-    }
+    } 
     
      const token = authHeader.split(' ')[1];
 

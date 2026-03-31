@@ -23,12 +23,18 @@ User.init(
     },
     userName:{
       type: DataTypes.STRING,
-      allowNull: false
+      allowNull: false,
+      onDelete: "CASACDE",
+      onDelete: "CASCADE"
     },
     email: {
       type: DataTypes.STRING,
       allowNull: false,
       unique: true,
+    },
+    SSN: {
+      type: DataTypes.STRING,
+      allowNull: true
     },
     password: {
       type: DataTypes.STRING,

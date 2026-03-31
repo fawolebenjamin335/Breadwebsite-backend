@@ -3,9 +3,9 @@
 /** @type {import('sequelize-cli').Migration} */
 module.exports = {
   async up (queryInterface, Sequelize) {
-    await queryInterface.addColumn("Products", "publicID", {
+    await   queryInterface.addColumn("Products","publicID", {
       type: Sequelize.STRING,
-      allowNull: true,
+      allowNull:false,
       onDelete: "CASCADE",
       onUpdate: "CASCADE"
     })
@@ -18,7 +18,7 @@ module.exports = {
   },
 
   async down (queryInterface, Sequelize) {
-    await queryInterface.removeColumn("Products", "publicID")
+    await queryInterface.removeColumn("Products","publicID")
     /**
      * Add reverting commands here.
      *
